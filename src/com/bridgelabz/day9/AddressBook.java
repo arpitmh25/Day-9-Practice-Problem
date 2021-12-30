@@ -73,3 +73,35 @@ public class AddressBook {
 
         return contact;
     }
+
+    //Use case 3: Edit existing details
+    // Returns the index of contact details of a person in address book
+    public int searchExistingContact(String searchPerson) {
+        int index = -1;
+        int tempIndex = -1;
+        for (ArrayList<String> i : AddressBook.address_book) {
+            // find index of arraylist in which the given name is there
+            tempIndex++;
+            for (String j : i) {
+                // if name is found
+                if (j.equals(searchPerson)) {
+                    index = tempIndex;
+                    break;
+                }
+            }
+        }
+        return index;
+    }
+
+    // to change the contact details
+    public void editExistingContact() {
+        System.out.println("Enter the name of the person whose details you " + "want to be changed");
+        Scanner sc = new Scanner(System.in);
+        String search_pers = sc.next();
+        int index = searchExistingContact(search_pers);
+        System.out.println("Found the name, Kindly enter new details ");
+        // Ask for the new details
+        ArrayList<String> contact = enterContactDetails();
+        // Modify the values in the arrayList
+        AddressBook.address_book.set(index, contact);
+    }
