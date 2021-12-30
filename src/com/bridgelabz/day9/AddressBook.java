@@ -122,10 +122,10 @@ public class AddressBook {
 
     public static void main(String[] args) {
         System.out.println("Welcome to Address Book Program!");
-        AddressBook deatils = new AddressBook();
-        deatils.addContact();
-        deatils.searchExistingContact();
-        deatils.editExistingContact();
-        deatils.deleteExistingContact();
+        AddressBook details = new AddressBook();
+        details.addContact();
+        details.searchExistingContact();
+        details.editExistingContact();
+        details.deleteExistingContact();
     }
 }
